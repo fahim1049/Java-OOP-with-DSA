@@ -1,45 +1,23 @@
-class People{
-    String name;
-    int age,height;
+ interface Animal {
 
-    People(){
-
-        System.out.println("People Constructor");
+    public abstract void eat();
+}
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eat");
     }
-
-    People(String n, int a ){
-        name = n;
-        age = a;
-    }
-
-    People(String nam,int boyos,int heigh){
-        name = nam;
-        age = boyos;
-        height = heigh;
-
-    }
-
-    void display(){
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Height: " +height);
+}
+class Cat implements Animal {
+    public void eat() {
+        System.out.println("Cat eat");
     }
 }
 
-
-
-
-
-public class Main {
+ public class Main{
     public static void main(String[] args) {
-
-        People people1 = new People("Fahim",24);
-        people1.display();
-
-        People people2 = new People("Rahim",21,7);
-        people2.display();
-
-        People people3 = new People();
-        people3.display();
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+        dog.eat();
+        cat.eat();
     }
-}
+ }
